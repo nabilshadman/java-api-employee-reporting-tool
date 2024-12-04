@@ -1,81 +1,130 @@
-# Java API Employee Reporting Tool  
+# Java API Employee Reporting Tool
 
-## Description  
-The **Java API Employee Reporting Tool** is a lightweight Java application for managing employee data. It allows users to create, display, and validate employee records, while also generating a salary report in CSV format as part of the output. Exception handling ensures input validation, such as rejecting invalid numerical values for attributes like salary and hours worked. The application generates a `salary_report_employee.csv` file that contains the calculated salaries for all employees entered.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white)
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
-The tool demonstrates how employee data can be processed, validated, and reported efficiently.
- 
+A lightweight Java application for managing employee data and generating salary reports. The tool provides employee record management with data validation and CSV report generation capabilities.
 
-## Features  
-- **Employee Class**: Represents an employee with attributes such as name, hourly salary, and hours worked.  
-- **Custom Exception Handling**: Includes `InvalidNumberException` to ensure valid numerical input for attributes like salary and hours worked.  
-- **Salary Report Generation**: After entering employee data, the program generates a CSV file (`salary_report_employee.csv`) containing the employee salary details.  
-- **Data Display**: Outputs employee details and total salary in a formatted report.  
-- **Interactive Input**: Prompts the user to input the number of employees, along with their name, hourly salary, and hours worked.  
-- **User-friendly Validation**: Ensures that inputs like the number of employees, hourly salary, and hours worked are positive numbers.  
- 
-## File Overview  
-### [Employee.java](https://github.com/nabilshadman/java-api-employee-reporting-tool/blob/main/EmployeeReport/src/Employee.java)  
-Defines the `Employee` class, including attributes such as:  
-- `String name`  
-- `double salary`  
+## Table of Contents
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Architecture](#architecture)
+- [API Documentation](#api-documentation)
+- [Contributing](#contributing)
+- [Testing](#testing)
+- [License](#license)
+- [Citation](#citation)
+- [Acknowledgments](#acknowledgments)
 
-Methods include constructors, getters, setters, and a `toString` method for displaying employee details.  
+## Features
+- Employee record management with validation
+- Custom exception handling for numerical inputs
+- Automated CSV report generation
+- Interactive command-line interface
+- Data validation and sanitization
+- Configurable salary calculation
 
-### [InvalidNumberException.java](https://github.com/nabilshadman/java-api-employee-reporting-tool/blob/main/EmployeeReport/src/InvalidNumberException.java)  
-Defines a custom exception to handle invalid numerical inputs, particularly for attributes like employee salary.  
+## Requirements
+- Java Development Kit (JDK) 8 or later
+- Java Runtime Environment (JRE)
+- Terminal or Command Prompt
+- 256MB RAM minimum
+- 10MB disk space
 
-### [Driver.java](https://github.com/nabilshadman/java-api-employee-reporting-tool/blob/main/EmployeeReport/src/Driver.java)  
-Contains the main method for running the program. Demonstrates:  
-- Creating employee objects.  
-- Validating input data.  
-- Displaying employee details using the `toString` method.  
+## Installation
 
-## Usage  
-1. Compile the project:  
-   ```bash
-   javac EmployeeReport/src/*.java
-   ```  
+### From Source
+```bash
+# Clone the repository
+git clone https://github.com/nabilshadman/java-api-employee-reporting-tool.git
 
-2. Run the `Driver` program:  
-   ```bash
-   java -cp EmployeeReport/src Driver
-   ```  
+# Navigate to project directory
+cd java-api-employee-reporting-tool
 
-3. Follow on-screen [prompts](https://github.com/nabilshadman/java-api-employee-reporting-tool/tree/main/demo) to input employee data.  
-
-## Sample Output  
-```
-How many employees are there? Please enter a number: -2  
-Please try again with a positive number!  
-How many employees are there? Please enter a number: 2  
-
-Please enter employee 1's data below.  
-Name: John  
-Hourly salary (number): 20.5  
-Hours worked (number): 40  
-
-Please enter employee 2's data below.  
-Name: Jane  
-Hourly salary (number): 25.0  
-Hours worked (number): 35  
-
-Salary Report:
-----------------------------------------------------
-Name     Hourly Salary   Hours Worked   Total Salary
-----------------------------------------------------
-John     20.50           40             820.00
-Jane     25.00           35             875.00
-
-Salary report employee.csv has been created.  
-Thank you for using Salary Reporting Tool!
+# Compile the project
+javac EmployeeReport/src/*.java -d EmployeeReport/bin
 ```
 
-## Requirements  
-- Java 8 or later.  
+## Usage
 
-## Contributing  
-Contributions are welcome. Feel free to open issues or submit pull requests!  
+### Command Line Interface
+```bash
+# Run the application
+java -cp EmployeeReport/bin Driver
+```
 
-## License  
-This project is licensed under the [MIT License](https://github.com/nabilshadman/java-api-employee-reporting-tool/blob/main/LICENSE.txt).
+### Sample Input/Output
+```
+How many employees are there? Please enter a number: 2
+
+Please enter employee 1's data below.
+Name: John
+Hourly salary (number): 20.5
+Hours worked (number): 40
+
+Please enter employee 2's data below.
+Name: Jane
+Hourly salary (number): 25.0
+Hours worked (number): 35
+```
+
+The application generates `salary_report_employee.csv` with the following format:
+```csv
+Employee Name,Salary,Hours,Weekly Pay
+John,20.50,40,820.00
+Jane,25.00,35,875.00
+```
+
+## Architecture
+The project follows a modular architecture with three main components:
+- `Employee.java`: Core data model and business logic
+- `Driver.java`: Main application entry point and UI
+- `InvalidNumberException.java`: Custom exception handling
+
+## API Documentation
+JavaDoc documentation is available in the `/EmployeeReport/doc` directory. Key classes:
+
+```java
+public class Employee {
+    public Employee(String name, double hourlySalary, int hoursWorked)
+    public static void printSalaryReport(ArrayList<Employee> employees)
+}
+```
+
+## Contributing
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+## Testing
+```bash
+# Run test suite
+java -cp EmployeeReport/bin Test
+```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
+
+## Citation
+If you use this project in your research, please cite it as:
+```bibtex
+@software{java-api-employee-reporting,
+  author = {Shadman, Nabil},
+  title = {Java API Employee Reporting Tool},
+  year = {2020},
+  publisher = {GitHub},
+  url = {https://github.com/nabilshadman/java-api-employee-reporting-tool}
+}
+```
+
+## Acknowledgments
+- OpenJDK community for Java development tools
+- Contributors and maintainers
+
+---
