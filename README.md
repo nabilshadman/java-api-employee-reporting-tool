@@ -1,4 +1,4 @@
-# Java API Employee Reporting Tool
+# Employee Reporting Tool: Java API
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white)
@@ -140,7 +140,7 @@ If you use this project in your research, please cite it as:
 ```bibtex
 @software{java-api-employee-reporting,
   author = {Shadman, Nabil},
-  title = {Java API Employee Reporting Tool},
+  title = {Employee Reporting Tool: Java API},
   year = {2020},
   publisher = {GitHub},
   url = {https://github.com/nabilshadman/java-api-employee-reporting-tool}
