@@ -11,6 +11,7 @@ A lightweight Java application for managing employee data and generating salary 
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Demo](#demo)
 - [Architecture](#architecture)
 - [API Documentation](#api-documentation)
 - [Contributing](#contributing)
