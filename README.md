@@ -78,6 +78,29 @@ John,20.50,40,820.00
 Jane,25.00,35,875.00
 ```
 
+## Demo
+
+Here's a visual demonstration of the application in action:
+
+<table>
+<tr>
+  <td width="50%">
+    <img src="./demo/0_employee_report_user_input.jpg" width="400" alt="Command Line Interface Input"/><br/>
+    <em>1. Interactive CLI collecting employee data</em>
+  </td>
+  <td width="50%">
+    <img src="./demo/1_employee_report_csv_output.jpg" width="400" alt="Generated CSV Report"/><br/>
+    <em>2. Generated CSV salary report output</em>
+  </td>
+</tr>
+</table>
+
+The tool features:
+- User-friendly command-line interface for data entry
+- Input validation for numerical values
+- Automated CSV report generation with formatted salary calculations
+
+
 ## Architecture
 The project follows a modular architecture with three main components:
 - `Employee.java`: Core data model and business logic
